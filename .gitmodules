@@ -4,3 +4,6 @@
 [submodule "Milestone1/GetNextLine"]
 	path = Milestone1/GetNextLine
 	url = git@github.com:Univers42/GetNextLine.git
+[submodule "Milestone1/ft_libft"]
+	path = Milestone1/ft_libft
+	url = git@github.com:Univers42/ft_printf.git
