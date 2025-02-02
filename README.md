@@ -22,7 +22,9 @@ Every project will be organized by milestone, from **Milestone 0** to **Mileston
 - [License](#license)
 
 ---
-
+## 👀 Disclaimer !!
+You can find all my work in those link
+👉🏽[community hub of project in 42 school](https://puzzled-basil-cc8.notion.site/Universe42-18352b5682188018accae57b55410ea8)
 ## About the Project
 
 **Universe42** is my personal repository to gather all the projects I develop throughout my time at Project42. The idea is simple: each project showcases my ability to solve problems and develop technical skills in various domains like C, algorithms, data structures, and more.
