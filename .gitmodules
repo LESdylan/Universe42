@@ -13,3 +13,9 @@
 [submodule "Milestone3/MiniShell"]
 	path = Milestone3/MiniShell
 	url = git@github.com:Univers42/MiniShell.git
+[submodule "DSA/dsa"]
+	path = DSA/dsa
+	url = git@github.com:Univers42/DSA.git
+[submodule "Testor/testor"]
+	path = Testor/testor
+	url = git@github.com:Univers42/Testor.git
