@@ -145,3 +145,87 @@ A big thank you to **Project42** for providing such a robust and challenging cur
 ---
 
 **Let's explore the universe of coding together! 🚀🌍**
+
+
+# Project Name 🚀
+
+A brief description of your project and its purpose.
+
+![Build Status](https://img.shields.io/github/actions/workflow/status/username/repo/ci.yml)
+![License](https://img.shields.io/github/license/username/repo)
+
+---
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+| Feature        | Description          |
+|----------------|----------------------|
+| **Fast**       | Optimized for speed |
+| **Secure**     | Industry-grade security |
+## Introduction
+What problem does this project solve? Who is it for? Why is it useful?
+
+## Features
+- 🌟 Feature 1
+- 🔒 Feature 2
+- 🚀 Feature 3
+
+## Features
+- 🌟 Easy-to-use
+- 📦 Modular
+- 💬 Multilingual Support
+
+## Screenshots
+![Screenshot](./assets/screenshot.png)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/repo.git
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+### 8. **Contributing Guidelines**
+- Encourage others to contribute by providing guidelines.
+
+Example:
+```markdown
+## Contributing
+Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
+
+## Usage
+To run the application:
+```bash
+npm run start
+
+## Installation
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/username/repo.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the application:
+   ```bash
+   npm start
+   ```
+
+   ## 📚 Documentation
+- [Introduction](docs/introduction.md)
+- [Setting Up Dual Repositories](docs/setup-dual-repo.md)
+- [Contributing Guidelines](docs/contributing.md)
+- [Project Structure Guide](docs/project-structure.md)
+- [FAQ](docs/faq.md)
+
+
+In GitHub's display of submodules, the naming convention includes both the submodule directory name and the specific commit hash (e.g., libft @ 9c61f8c). Unfortunately, you cannot change this display format directly on GitHub because it's how submodules are intended to work: they are designed to show the exact commit being referenced for clarity and reproducibility.
