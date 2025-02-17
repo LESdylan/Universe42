@@ -1,20 +1,50 @@
 #include <stdio.h>
 
 int main() {
-    int number = 42;
-    float pi = 3.14159;
+    int num = 42;
+    float fnum = 3.14159;
+    char str[] = "HelloWorld";
 
-    // Using width
-    printf("Number with width: [%5d]\n", number);  // Output: "   42"
+    // 1. Width 
+    printf("Width examples:\n");
+    printf("|%5d|\n", num);     // Right-align with spaces
+    printf("|%-5d|\n", num);    // Left-align
+    printf("|%10s|\n", str);   // String width
+    printf("|%-10s|\n", str);  // Left-aligned string
+    printf("\n");
 
-    // Using precision for floating-point
-    printf("Pi with precision: [%.2f]\n", pi);  // Output: "3.14"
+    // 2. Precision 
+    printf("Precision examples:\n");
+    printf("|%.5d|\n", num);    // Leading zeros
+    printf("|%.2f|\n", fnum);   // Two decimal places
+    printf("|%.3s|\n", str);   // Truncate string to 3 chars
+    printf("\n");
 
-    // Using width and precision together for floating-point
-    printf("Pi with width and precision: [%8.3f]\n", pi);  // Output: "   3.142"
+    // 3. Width + Precision
+    printf("Width + Precision examples:\n");
+    printf("|%6.4d|\n", num);    // Min 4 digits, total width 6
+    printf("|%8.2f|\n", fnum);   // Width 8, 2 decimal places
+    printf("|%10.3s|\n", str);  // Width 10, max 3 characters
+    printf("\n");
 
-    // Using width and precision together for integer
-    printf("Number with width and precision: [%8.5d]\n", number);  // Output: "00042   "
+    // 4. Left Justification
+    printf("Left Justification examples:\n");
+    printf("|%-8.2f|\n", fnum);  // Left-align float
+    printf("|%-6.4d|\n", num);   // Left-align integer
+    printf("\n");
+
+    // 5. Zero Padding
+    printf("Zero Padding examples:\n");
+    printf("|%05d|\n", num);     // Leading zeros
+    printf("|%08.2f|\n", fnum);  // Zero padding float
+    printf("\n");
+
+    // 6. Combining Flags
+    printf("Combining Flags examples:\n");
+    printf("|%-8.5d|\n", num);   // Left-align, min 5 digits
+    printf("|%-8.2f|\n", fnum);  // Left-align float
+    printf("|%08.2f|\n", fnum);  // Zero padding + precision
+    printf("\n");
 
     return 0;
 }
