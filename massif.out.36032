@@ -1,0 +1,69 @@
+desc: (none)
+cmd: ./get_next_line_test
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=159915
+mem_heap_B=472
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=161733
+mem_heap_B=1496
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=165045
+mem_heap_B=1496
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=peak
+n2: 1496 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x48DD1B4: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x48ED523: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x48EAF8F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+    n1: 1024 0x48EBAAE: _IO_new_file_xsputn (fileops.c:1244)
+     n1: 1024 0x48EBAAE: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+      n1: 1024 0x48B8CC8: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+       n1: 1024 0x48B8CC8: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+        n1: 1024 0x48C3742: __vfprintf_internal (vfprintf-internal.c:1545)
+         n1: 1024 0x48DB49F: locked_vfxprintf (fxprintf.c:31)
+          n1: 1024 0x48DB70E: __vfxprintf (fxprintf.c:69)
+           n1: 1024 0x48DB70E: __fxprintf (fxprintf.c:79)
+            n1: 1024 0x4880A70: perror_internal (perror.c:39)
+             n1: 1024 0x4880B25: perror (perror.c:74)
+              n0: 1024 0x1095CB: main (main.c:25)
+ n1: 472 0x48DD59D: fdopen@@GLIBC_2.2.5 (iofdopen.c:122)
+  n1: 472 0x4880AED: perror (perror.c:61)
+   n0: 472 0x1095CB: main (main.c:25)
+#-----------
+snapshot=4
+#-----------
+time=165045
+mem_heap_B=472
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=165183
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
