@@ -18,8 +18,21 @@
               "icon": "excalidraw-icon",
               "title": "get_next_line_bonus.c"
             }
+          },
+          {
+            "id": "7cdb9a544c126758",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "pipex/pipex.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "pipex"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,10 +179,12 @@
   },
   "active": "490668397d4b7c9e",
   "lastOpenFiles": [
-    "get_next_line/get_next_lin.c.md",
-    "get_next_line/get_next_line_bonus.c.md",
-    "Untitled.canvas",
     "2025-02-21.md",
+    "pipex/pipex.md",
+    "get_next_line/get_next_line_bonus.c.md",
+    "pipex",
+    "get_next_line/get_next_lin.c.md",
+    "Untitled.canvas",
     "Welcome.md",
     "Excalidraw",
     "printf",
