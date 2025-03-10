@@ -19,3 +19,6 @@
 [submodule "Testor/testor"]
 	path = Testor/testor
 	url = git@github.com:Univers42/Testor.git
+[submodule "Testor/ft_printf_testor"]
+	path = Testor/ft_printf_testor
+	url = git@github.com:Univers42/ft_printf_tester.git
