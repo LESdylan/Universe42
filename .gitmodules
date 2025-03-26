@@ -4,12 +4,6 @@
 [submodule "Milestone1/GetNextLine"]
 	path = Milestone1/GetNextLine
 	url = git@github.com:Univers42/GetNextLine.git
-[submodule "ft_printf"]
-	path = ft_printf
-	url = git@github.com:Univers42/ft_printf.git
-[submodule "Milestone1/ft_printf"]
-	path = Milestone1/ft_printf
-	url = git@github.com:Univers42/ft_printf.git
 [submodule "Milestone3/MiniShell"]
 	path = Milestone3/MiniShell
 	url = git@github.com:Univers42/MiniShell.git
