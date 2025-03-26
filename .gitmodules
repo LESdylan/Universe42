@@ -19,3 +19,12 @@
 [submodule "Milestone1/ft_printf"]
 	path = Milestone1/ft_printf
 	url = git@github.com:Univers42/ft_printf_42.git
+[submodule "Milestone1/printf"]
+	path = Milestone1/printf
+	url = git@github.com:Univers42/ft_printf_42.git
+[submodule "GetNextLine"]
+	path = GetNextLine
+	url = git@github.com:Univers42/GetNextLine.git
+[submodule "Milestone1/get_next_line"]
+	path = Milestone1/get_next_line
+	url = git@github.com:Univers42/GetNextLine.git
