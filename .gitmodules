@@ -16,3 +16,6 @@
 [submodule "Testor/ft_printf_testor"]
 	path = Testor/ft_printf_testor
 	url = git@github.com:Univers42/ft_printf_tester.git
+[submodule "Milestone1/ft_printf"]
+	path = Milestone1/ft_printf
+	url = git@github.com:Univers42/ft_printf_42.git
