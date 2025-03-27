@@ -28,3 +28,9 @@
 [submodule "Milestone1/get_next_line"]
 	path = Milestone1/get_next_line
 	url = git@github.com:Univers42/GetNextLine.git
+[submodule "Testor/TDD"]
+	path = Testor/TDD
+	url = git@github.com:Univers42/TDD.git
+[submodule "Testor/Test_driven_development"]
+	path = Testor/Test_driven_development
+	url = git@github.com:Univers42/TDD.git
