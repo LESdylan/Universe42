@@ -97,6 +97,7 @@ update:
 	@git push
 	@echo "$(GREEN)$(BOLD)✓ All submodules updated and changes pushed!$(RESET)"
 
+dir-
 # Push changes with an optional commit message
 push:
 	@if ! git diff-index --quiet HEAD --; then \
@@ -155,3 +156,9 @@ update-libft:
 	@git commit -m "Update libft submodule"
 	@git push
 	@echo "$(GREEN)$(BOLD)✓ libft updated successfully!$(RESET)"
+
+update-push-spec:
+	cd $(PATH_CUSTOM)
+	git add .
+	git commit -m "update"
+	git push
