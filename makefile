@@ -1,10 +1,24 @@
-PATH_GNL=Milestone1/GetNextLine
-PATH_PRINTF=Milestone1/ft_printf
-PATH_LIBFT=Milestone0/libft
-PATH_B2B=Milestone
+# Makefile for updating and pushing git submodules
 
+# Paths to submodules
+PATH_GNL = Milestone1/get_next_line
+PATH_PRINTF = Milestone1/printf
+PATH_LIBFT = Milestone0/libft
+
+# Combine paths into a single variable
+PATH_ALL_MODULES = $(PATH_GNL) $(PATH_PRINTF) $(PATH_LIBFT) $(PATH_B2B)
+
+# Update submodules
 update:
-	git submodule update --remote $(PATH_LIBFT)
-	git add . && git commit -m "update" && git push
+	git submodule update --remote $(PATH_ALL_MODULES)
+	git add .
+	git commit -m "Update submodules"
+	git push
+
+# Push changes with an optional commit message
 push:
-	@git diff-index --quiet HEAD -- || (git add . ; git commit -m "$(M)" ; git push)
+	@if ! git diff-index --quiet HEAD --; then \
+		git add .; \
+		git commit -m "$(or $(M),Automatic commit)"; \
+		git push; \
+	fi
