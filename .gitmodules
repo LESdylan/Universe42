@@ -34,3 +34,9 @@
 [submodule "Testor/Test_driven_development"]
 	path = Testor/Test_driven_development
 	url = git@github.com:Univers42/TDD.git
+[submodule "Milestone2/thread-of-steel"]
+	path = Milestone2/thread-of-steel
+	url = git@github.com:Univers42/thread-of-steel.git
+[submodule "Milestone2/push_swap"]
+	path = Milestone2/push_swap
+	url = git@github.com:Univers42/push_swap.git
