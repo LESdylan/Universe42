@@ -4,6 +4,14 @@ Welcome to **Universe42**! This repository is the central hub for all the projec
 
 Every project will be organized by milestone, from **Milestone 0** to **Milestone 6**, allowing you to follow my evolution as a developer and my contributions to the tech community. 🚀
 
+```bash
+#to clone all the modules project on this repo otherwise you would get nothing
+git clone --recurse-submodules <repo-url>
+#if you've mdde the mistake to clone first and you suddenly discover that the repos are empty : here's the command
+# from the root project copy paste that
+git submodule update --init --recursive
+
+```
 ---
 
 ## Table of Contents
