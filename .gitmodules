@@ -40,3 +40,9 @@
 [submodule "Milestone2/push_swap"]
 	path = Milestone2/push_swap
 	url = git@github.com:Univers42/push_swap.git
+[submodule "Milestone1/born2beroot"]
+	path = Milestone1/born2beroot
+	url = git@github.com:LESdylan/setup_arch_linux.git
+[submodule "Milestone2/push-swap"]
+	path = Milestone2/push-swap
+	url = git@github.com:Univers42/push-swap.git
