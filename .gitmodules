@@ -46,3 +46,6 @@
 [submodule "Milestone2/push-swap"]
 	path = Milestone2/push-swap
 	url = git@github.com:Univers42/push-swap.git
+[submodule "obsidian_doc_project"]
+	path = obsidian_doc_project
+	url = git@github.com:LESdylan/mental-mosaic.git
