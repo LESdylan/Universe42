@@ -49,3 +49,6 @@
 [submodule "obsidian_doc_project"]
 	path = obsidian_doc_project
 	url = git@github.com:LESdylan/mental-mosaic.git
+[submodule "evals42"]
+	path = evals42
+	url = https://github.com/Univers42/evals42.git
