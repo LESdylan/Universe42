@@ -235,5 +235,25 @@ npm run start
 - [Project Structure Guide](docs/project-structure.md)
 - [FAQ](docs/faq.md)
 
+## Submodule utilities to debug
+Given that submodules can sometimes be tricky to manage, here are some useful Git commands to help you debug and manage submodules effectively:
 
+```bash
+git submodule status
+## Check what commits are recorded for these submdodules
+git ls-tree HEAD <path_to_submodule>
+## When submodule is not up to date
+git submodule update --remote --merge
+## To see the changes in the submodule
+git diff <path_to_submodule>
+## To force the submodule to a specific commit
+git checkout <commit_hash>
+## To force the checkout of the submodule
+git submodule update --init --force --recursive <path_to_submodule>
+## To remove a submodule
+git submodule deinit -f -- <path_to_submodule>
+## Then remove the submodule entry from .gitmodules and .git/config
+git rm -f <path_to_submodule>
+
+```
 In GitHub's display of submodules, the naming convention includes both the submodule directory name and the specific commit hash (e.g., libft @ 9c61f8c). Unfortunately, you cannot change this display format directly on GitHub because it's how submodules are intended to work: they are designed to show the exact commit being referenced for clarity and reproducibility.
