@@ -1,0 +1,3 @@
+//fprintf()
+//fputs/()
+//fwrite()

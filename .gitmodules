@@ -8,13 +8,13 @@
 	path = Milestone3/MiniShell
 	url = git@github.com:Univers42/MiniShell.git
 [submodule "Testor/gnl_tester"]
-	path = Testor/gnl_tester
+	path = Utils42/Testor/gnl_tester
 	url = git@github.com:Univers42/gnlTester.git
 [submodule "Testor/testor"]
-	path = Testor/testor
+	path = Utils42/Testor/testor
 	url = git@github.com:Univers42/Testor.git
 [submodule "Testor/ft_printf_testor"]
-	path = Testor/ft_printf_testor
+	path = Utils42/Testor/ft_printf_testor
 	url = git@github.com:Univers42/ft_printf_tester.git
 [submodule "Milestone1/ft_printf"]
 	path = Milestone1/ft_printf
@@ -29,26 +29,32 @@
 	path = Milestone1/get_next_line
 	url = git@github.com:Univers42/GetNextLine.git
 [submodule "Testor/TDD"]
-	path = Testor/TDD
+	path = Utils42/Testor/TDD
 	url = git@github.com:Univers42/TDD.git
 [submodule "Testor/Test_driven_development"]
-	path = Testor/Test_driven_development
+	path = Utils42/Testor/Test_driven_development
 	url = git@github.com:Univers42/TDD.git
-[submodule "Milestone2/thread-of-steel"]
-	path = Milestone2/thread-of-steel
-	url = git@github.com:Univers42/thread-of-steel.git
-[submodule "Milestone2/push_swap"]
-	path = Milestone2/push_swap
-	url = git@github.com:Univers42/push_swap.git
 [submodule "Milestone1/born2beroot"]
 	path = Milestone1/born2beroot
 	url = git@github.com:LESdylan/setup_arch_linux.git
 [submodule "Milestone2/push-swap"]
 	path = Milestone2/push-swap
 	url = git@github.com:Univers42/push-swap.git
-[submodule "obsidian_doc_project"]
-	path = obsidian_doc_project
-	url = git@github.com:LESdylan/mental-mosaic.git
 [submodule "evals42"]
-	path = evals42
+	path = Utils42/evals42
 	url = https://github.com/Univers42/evals42.git
+[submodule "my_notes"]
+	path = Utils42/my_notes
+	url = git@github.com:LESdylan/mental-mosaic.git
+[submodule "Milestone2/fdf"]
+	path = Milestone2/fdf
+	url = git@github.com:Univers42/fdf.git
+[submodule "Milestone2/minitalk"]
+	path = Milestone2/minitalk
+	url = git@github.com:Univers42/minitalk.git
+[submodule "Milestone3/mini_shell"]
+	path = Milestone3/mini_shell
+	url = git@github.com:Univers42/mini_shell.git
+[submodule "Milestone3/philosopher"]
+	path = Milestone3/philosopher
+	url = git@github.com:Univers42/philosopher.git
