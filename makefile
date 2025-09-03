@@ -97,7 +97,6 @@ update:
 	@git push
 	@echo "$(GREEN)$(BOLD)✓ All submodules updated and changes pushed!$(RESET)"
 
-dir-
 # Push changes with an optional commit message
 push:
 	@if ! git diff-index --quiet HEAD --; then \
