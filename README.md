@@ -1,258 +1,288 @@
+<div align="center">
+
 # Universe42 🌌
 
-Welcome to **Universe42**! This repository is the central hub for all the projects I will be working on throughout my journey at **Project42 School**. The goal of this repository is to showcase my growth and learning as I progress through the milestones of the 42 curriculum. 
+Central hub of my journey at 42 — all milestones, all projects, one universe.
 
-Every project will be organized by milestone, from **Milestone 0** to **Milestone 6**, allowing you to follow my evolution as a developer and my contributions to the tech community. 🚀
+<!-- Badges -->
+<a href="https://github.com/LESdylan/Universe42/stargazers">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/LESdylan/Universe42?style=for-the-badge">
+</a>
+<a href="https://github.com/LESdylan/Universe42/network/members">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/LESdylan/Universe42?style=for-the-badge">
+</a>
+<a href="https://github.com/LESdylan/Universe42">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LESdylan/Universe42?style=for-the-badge">
+</a>
+<a href="LICENSE">
+  <img alt="License" src="https://img.shields.io/github/license/LESdylan/Universe42?style=for-the-badge">
+</a>
 
-```bash
-#to clone all the modules project on this repo otherwise you would get nothing
-git clone --recurse-submodules <repo-url>
-#if you've mdde the mistake to clone first and you suddenly discover that the repos are empty : here's the command
-# from the root project copy paste that
-git submodule update --init --recursive
-
-```
----
-
-## Table of Contents
-
-- [About the Project](#about-the-project)
-- [Milestones Overview](#milestones-overview)
-  - [Milestone 0](#milestone-0)
-  - [Milestone 1](#milestone-1)
-  - [Milestone 2](#milestone-2)
-  - [Milestone 3](#milestone-3)
-  - [Milestone 4](#milestone-4)
-  - [Milestone 5](#milestone-5)
-  - [Milestone 6](#milestone-6)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+<p>
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#milestones-overview">Milestones</a> •
+  <a href="#partial-clone--sparse-checkout">Partial Clone</a> •
+  <a href="#submodule-troubleshooting--advanced">Submodules</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
+</div>
 
 ---
-## 👀 Disclaimer !!
-You can find all my work in those link
-👉🏽[community hub of project in 42 school](https://puzzled-basil-cc8.notion.site/Universe42-18352b5682188018accae57b55410ea8)
+
+## 👀 Disclaimer
+
+All my work and notes are also curated here:
+👉🏽 Community Hub: https://puzzled-basil-cc8.notion.site/Universe42-18352b5682188018accae57b55410ea8
+
+---
+
 ## About the Project
 
-**Universe42** is my personal repository to gather all the projects I develop throughout my time at Project42. The idea is simple: each project showcases my ability to solve problems and develop technical skills in various domains like C, algorithms, data structures, and more.
+Universe42 gathers all projects developed during my 42 curriculum. Each project lives as a Git submodule, organized by milestone from Milestone 0 to Milestone 6. Browse projects independently, clone everything, or even fetch a single file — your choice.
 
-Through this repository, you will be able to see how my skills evolve over time, from basic programming principles to more advanced software engineering concepts. This project is not only about learning but also about pushing boundaries and exploring new technologies.
+- Languages and domains: C, algorithms, data structures, Unix, systems programming, networking, graphics, and more.
+- Goal: show progression from fundamentals to advanced software engineering.
 
-## BEFORE STARTING
-This big repo is made of submodules, each submodule is a project that I did in 42 school driven by them or related to it for my learning path... All ressources I dispose to you can be picked up independently of each other. 
-You are not forced to clone the entire repo, you can just clone the project you want to check out.
+---
+
+## Project Structure (high level)
+
+- Milestone_0/, Milestone_1/, ..., Milestone_6/
+- Utils42/ (e.g., bash_command/)
+- docs/
+- LICENSE, README.md, .gitmodules
+
+Note: Each project is a submodule. See Quick Start and Submodule sections for proper cloning.
+
+---
+
+## Quick Start
+
+Use this if you want the whole repository with all submodules:
 
 ```bash
-git clone --recurse-submodules <repo-url>
+# Fresh clone with all submodules
+git clone --recurse-submodules https://github.com/LESdylan/Universe42.git
+cd Universe42
+
+# If you cloned without --recurse-submodules, run:
 git submodule update --init --recursive
 ```
 
-you can event imagine to reach only a specific files like in `Utils42/bash_command` directory. In this case you would need to extract them through the link of download provided by github.
-```bash
-wget https://raw.githubusercontent.com/<username>/<repo>/main/<dir>/<dir+n>/<file>.<extensioon>
-# example
-wget https://raw.githubusercontent.com/LESdylan/Universe42/main/Utils42/bash_command/backup.sh
-```
-Run this command in the directoroy you want to download the file to and you'll get it. As simply as that.
+Keep submodules synced to their tracked branches:
 
-### Even better
-In case you add the idea to clone the integrated checkout of the project in specific milestone, you can do it like that
 ```bash
-git clone --depth 1 --filter=blob:none --sparse https://github.com/LESdylan/Universe42/.git
-cd Universe42
-git sparse-checkout set Milestone_0/ft_printf # example of extracting only the ft_printf project
+git submodule update --remote --merge
+```
+
+Download a single file without cloning (example):
+
+```bash
+# Replace username/repo/path/file as needed
+wget https://raw.githubusercontent.com/LESdylan/Universe42/main/Utils42/bash_command/backup.sh -O backup.sh
 ```
 
 ---
+
+## Partial Clone / Sparse Checkout
+
+Clone only what you need (faster, lighter):
+
+```bash
+git clone --filter=blob:none --sparse https://github.com/LESdylan/Universe42.git
+cd Universe42
+
+# Select only the project(s) you want, e.g., Milestone_0/ft_printf
+git sparse-checkout set Milestone_0/ft_printf
+
+# Initialize submodules only for selected paths (depth 1 is optional)
+git submodule update --init --recursive --depth 1 Milestone_0/ft_printf
+```
+
+Tip: You can add or remove paths with git sparse-checkout set <path...> anytime.
+
+---
+
 ## Milestones Overview
 
-The 42 curriculum is divided into several milestones. Each milestone includes a variety of projects that aim to deepen our understanding of different aspects of software development. Below is an overview of the milestones in this repository:
-
-### Milestone 0
-
-Milestone 0 focuses on the foundation of programming, diving deep into C, memory management, and file handling. Expect simple, yet fundamental projects that lay the groundwork for the more complex tasks to come.
-
-**Projects in Milestone 0:**
-- Basic C programming exercises
-- Intro to Git and GitHub
-- Simple command-line tools and utilities
-
-### Milestone 1
-
-Milestone 1 introduces more advanced topics, including recursion, algorithms, and data structures. By this stage, we are expected to become comfortable with problem-solving and optimization.
-
-**Projects in Milestone 1:**
-- Recursive functions and puzzles
-- Sorting and searching algorithms
-- Basic memory and performance optimization techniques
-
-### Milestone 2
-
-In Milestone 2, we get deeper into system-level programming. Topics like file descriptors, system calls, and process management are explored. At this point, I will start creating more complex software and tools.
-
-**Projects in Milestone 2:**
-- Unix-based tools and utilities
-- File I/O management
-- Working with low-level processes
-
-### Milestone 3
-
-Milestone 3 expands into more challenging projects, with a focus on software design, architecture, and multi-threading. The goal is to integrate all our prior knowledge and build real-world applications.
-
-**Projects in Milestone 3:**
-- Complex multi-threaded applications
-- Design patterns and architectural structures
-- Advanced algorithms and problem-solving
-
-### Milestone 4
-
-At this stage, I will be tackling more abstract concepts, like artificial intelligence, graphics, and databases. This is where the fun really begins, as we start making projects that can have a direct impact on the world around us.
-
-**Projects in Milestone 4:**
-- Machine learning basics
-- Game development or graphical applications
-- Database interaction and management
-
-### Milestone 5
-
-Milestone 5 allows for greater autonomy. By this point, I am expected to work on more complex systems, like network programming and distributed systems. The focus shifts towards efficiency, scalability, and system integration.
-
-**Projects in Milestone 5:**
-- Network programming (sockets, protocols)
-- Distributed systems and cloud technologies
-- High-performance applications
-
-### Milestone 6
-
-The final milestone will showcase everything learned throughout the program. This is where we build the most complete, professional-grade projects that demonstrate mastery of all areas of software development.
-
-**Projects in Milestone 6:**
-- Capstone projects with real-world applications
-- Team collaborations and open-source contributions
-- Full-stack development (or similar advanced topics)
+- Milestone 0 — Foundations: C basics, memory, file handling, CLI tools, Git.
+- Milestone 1 — Algorithms: recursion, sorting/searching, performance basics.
+- Milestone 2 — Systems: Unix tools, file descriptors, syscalls, processes.
+- Milestone 3 — Design & Concurrency: multithreading, design patterns, advanced algorithms.
+- Milestone 4 — Higher-level Topics: ML basics, graphics/game dev, databases.
+- Milestone 5 — Scale & Networks: sockets, protocols, distributed systems, performance.
+- Milestone 6 — Capstones: full-stack/large-scale projects, team/open-source work.
 
 ---
 
-## Getting Started
+## Submodule Tips (Everyday)
 
-To get started with any project, follow the steps below:
+- After pulling new commits in the main repo:
 
-1. Clone this repository to your local machine:
-    ```bash
-    git clone https://github.com/yourusername/Universe42.git
-    ```
+```bash
+git submodule update --init --recursive
+```
 
-2. Navigate to the appropriate milestone folder to access the project files:
-    ```bash
-    cd Universe42/milestoneX
-    ```
+- Bring submodules up to their remote-tracking branches:
 
-3. Follow the individual project README files within each milestone for detailed instructions on how to run and contribute to each project.
+```bash
+git submodule update --remote --merge
+```
+
+---
+
+## Submodule Troubleshooting (Advanced)
+
+<details>
+  <summary>Click to expand</summary>
+
+Check submodule status:
+
+```bash
+git submodule status
+```
+
+See the commit recorded for a submodule:
+
+```bash
+git ls-tree HEAD <path_to_submodule>
+```
+
+Update a submodule to the latest remote commit (merge into current):
+
+```bash
+git submodule update --remote --merge <path_to_submodule>
+```
+
+Diff changes inside a submodule:
+
+```bash
+git diff --submodule=log <path_to_submodule>
+# or within the submodule directory:
+cd <path_to_submodule> && git status && git log --oneline -n 5
+```
+
+Force init/update (if something got stuck):
+
+```bash
+git submodule update --init --force --recursive <path_to_submodule>
+```
+
+Reset a submodule to the commit referenced by the superproject:
+
+```bash
+cd <path_to_submodule>
+git fetch
+git checkout <commit_hash>   # the one shown by the superproject
+```
+
+Remove a submodule cleanly:
+
+```bash
+git submodule deinit -f -- <path_to_submodule>
+git rm -f <path_to_submodule>
+rm -rf .git/modules/<path_to_submodule>
+# Also edit .gitmodules and .git/config if entries remain
+```
+
+Note about GitHub submodule display:
+GitHub shows submodules as <name> @ <commit-hash> for clarity and reproducibility; this display cannot be customized.
+
+</details>
 
 ---
 
 ## Contributing
 
-If you'd like to contribute to any project in **Universe42**, feel free to fork the repository, create a branch, and submit a pull request. Contributions are always welcome!
+Contributions are welcome!
 
-Before submitting a PR, please ensure that:
-
-- You’ve thoroughly tested your changes
-- Your code adheres to the coding style and guidelines
-- Your commit messages are descriptive and follow the project's format
+- Fork the repo and create a feature branch.
+- Make changes with clear commit messages.
+- Ensure code builds/tests (if applicable).
+- Open a Pull Request with a concise description.
 
 ---
 
 ## License
 
-This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See LICENSE for details.
 
 ---
 
 ## Acknowledgements
 
-A big thank you to **Project42** for providing such a robust and challenging curriculum that pushes me to grow as a developer every day. Also, shout-out to the open-source community for all the resources and inspiration!
+- Project42 for the curriculum and challenges.
+- Open-source community for tools, docs, and inspiration.
 
 ---
 
-**Let's explore the universe of coding together! 🚀🌍**
-
-
-# Project Name 🚀
-
-A brief description of your project and its purpose.
-
-![Build Status](https://img.shields.io/github/actions/workflow/status/username/repo/ci.yml)
-![License](https://img.shields.io/github/license/username/repo)
-
----
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-| Feature        | Description          |
-|----------------|----------------------|
-| **Fast**       | Optimized for speed |
-| **Secure**     | Industry-grade security |
-## Introduction
-What problem does this project solve? Who is it for? Why is it useful?
-
+<div align="center">
+<strong>Let’s explore the universe of coding together! 🚀🌍</strong>
+</div>
 ## Features
 - 🌟 Feature 1
 - 🔒 Feature 2
 - 🚀 Feature 3
 
 ## Features
+
 - 🌟 Easy-to-use
 - 📦 Modular
 - 💬 Multilingual Support
 
 ## Screenshots
+
 ![Screenshot](./assets/screenshot.png)
 
 ## Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/repo.git
+   ```
+
 ## License
+
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ### 8. **Contributing Guidelines**
+
 - Encourage others to contribute by providing guidelines.
 
 Example:
-```markdown
+
+````markdown
 ## Contributing
+
 Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
 
 ## Usage
+
 To run the application:
-```bash
+
+````bash
 npm run start
 
 ## Installation
 1. Clone the repo:
    ```bash
    git clone https://github.com/username/repo.git
-   ```
+````
+````
+
 2. Install dependencies:
    ```bash
    npm install
    ```
 3. Start the application:
+
    ```bash
    npm start
    ```
 
    ## 📚 Documentation
+
 - [Introduction](docs/introduction.md)
 - [Setting Up Dual Repositories](docs/setup-dual-repo.md)
 - [Contributing Guidelines](docs/contributing.md)
@@ -260,6 +290,7 @@ npm run start
 - [FAQ](docs/faq.md)
 
 ## Submodule utilities to debug
+
 Given that submodules can sometimes be tricky to manage, here are some useful Git commands to help you debug and manage submodules effectively:
 
 ```bash
@@ -280,4 +311,5 @@ git submodule deinit -f -- <path_to_submodule>
 git rm -f <path_to_submodule>
 
 ```
+
 In GitHub's display of submodules, the naming convention includes both the submodule directory name and the specific commit hash (e.g., libft @ 9c61f8c). Unfortunately, you cannot change this display format directly on GitHub because it's how submodules are intended to work: they are designed to show the exact commit being referenced for clarity and reproducibility.
