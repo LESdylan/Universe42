@@ -34,6 +34,12 @@ Central hub of my journey at 42 — all milestones, all projects, one universe.
 
 All my work and notes are also curated here:
 👉🏽 Community Hub: https://puzzled-basil-cc8.notion.site/Universe42-18352b5682188018accae57b55410ea8
+👉🏽 ./Utils42/my_notes
+
+> **ℹ️ To view these notes:**  
+> Open [Obsidian](https://obsidian.md/) and set `./Utils42/my_notes` as your vault directory.  
+> This setup works best on Linux distributions. For Windows, use [WSL](https://learn.microsoft.com/en-us/windows/wsl/) or a Linux VM (e.g., Ubuntu) for full compatibility.  
+> Cross-platform use is possible, but may require advanced tweaks.
 
 ---
 
@@ -252,7 +258,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Example:
 
-````markdown
+`````markdown
 ## Contributing
 
 Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
@@ -269,6 +275,8 @@ npm run start
    ```bash
    git clone https://github.com/username/repo.git
 ````
+`````
+
 ````
 
 2. Install dependencies:
@@ -313,3 +321,4 @@ git rm -f <path_to_submodule>
 ```
 
 In GitHub's display of submodules, the naming convention includes both the submodule directory name and the specific commit hash (e.g., libft @ 9c61f8c). Unfortunately, you cannot change this display format directly on GitHub because it's how submodules are intended to work: they are designed to show the exact commit being referenced for clarity and reproducibility.
+````
