@@ -58,3 +58,6 @@
 [submodule "Milestone3/philosopher"]
 	path = Milestone3/philosopher
 	url = git@github.com:Univers42/philosopher.git
+[submodule "Milestone0/web_lib_beta"]
+	path = Milestone0/web_lib_beta
+	url = git@github.com:LESdylan/documentation.git
