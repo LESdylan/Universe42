@@ -39,8 +39,24 @@ You can find all my work in those link
 
 Through this repository, you will be able to see how my skills evolve over time, from basic programming principles to more advanced software engineering concepts. This project is not only about learning but also about pushing boundaries and exploring new technologies.
 
----
+## BEFORE STARTING
+This big repo is made of submodules, each submodule is a project that I did in 42 school driven by them or related to it for my learning path... All ressources I dispose to you can be picked up independently of each other. 
+You are not forced to clone the entire repo, you can just clone the project you want to check out.
 
+```bash
+git clone --recurse-submodules <repo-url>
+git submodule update --init --recursive
+```
+
+you can event imagine to reach only a specific files like in `Utils42/bash_command` directory. In this case you would need to extract them through the link of download provided by github.
+```bash
+wget https://raw.githubusercontent.com/<username>/<repo>/main/<dir>/<dir+n>/<file>.<extensioon>
+# example
+wget https://raw.githubusercontent.com/LESdylan/Universe42/main/Utils42/bash_command/backup.sh
+```
+Run this command in the directoroy you want to download the file to and you'll get it. As simply as that.
+
+---
 ## Milestones Overview
 
 The 42 curriculum is divided into several milestones. Each milestone includes a variety of projects that aim to deepen our understanding of different aspects of software development. Below is an overview of the milestones in this repository:
