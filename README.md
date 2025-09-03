@@ -56,6 +56,14 @@ wget https://raw.githubusercontent.com/LESdylan/Universe42/main/Utils42/bash_com
 ```
 Run this command in the directoroy you want to download the file to and you'll get it. As simply as that.
 
+### Even better
+In case you add the idea to clone the integrated checkout of the project in specific milestone, you can do it like that
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/LESdylan/Universe42/.git
+cd Universe42
+git sparse-checkout set Milestone_0/ft_printf # example of extracting only the ft_printf project
+```
+
 ---
 ## Milestones Overview
 
