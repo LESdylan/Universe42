@@ -61,3 +61,6 @@
 [submodule "Milestone0/web_lib_beta"]
 	path = Milestone0/web_lib_beta
 	url = git@github.com:LESdylan/documentation.git
+[submodule "Utils42/Examen42"]
+	path = Utils42/Examen42
+	url = git@github.com:Univers42/Examen42.git
