@@ -90,6 +90,7 @@ status:
 
 # Update all submodules to latest remote version
 update:
+	git pull
 	@echo "$(CYAN)$(BOLD)Updating all submodules to latest remote version...$(RESET)"
 	@git submodule update --remote --merge $(PATH_ALL_MODULES)
 	@git add .
