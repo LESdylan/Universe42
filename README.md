@@ -69,7 +69,7 @@ Use this if you want the whole repository with all submodules:
 
 ```bash
 # Fresh clone with all submodules
-git clone --recurse-submodules https://github.com/LESdylan/Universe42.git
+git clone --recursive -j$(nproc) https://github.com/LESdylan/Universe42.git
 cd Universe42
 
 # If you cloned without --recurse-submodules, run:
