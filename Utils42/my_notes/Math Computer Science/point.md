@@ -1,1 +1,0 @@
-point has no [[dimension ]]it has only coordonate 

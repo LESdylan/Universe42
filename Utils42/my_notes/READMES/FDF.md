@@ -1,1 +1,0 @@
-My first graphic project at 42 school
