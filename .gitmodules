@@ -64,3 +64,42 @@
 [submodule "Utils42/Examen42"]
 	path = Utils42/Examen42
 	url = git@github.com:Univers42/Examen42.git
+[submodule "libft"]
+	path = libft
+	url = git@github.com:Univers42/libft.git
+[submodule "minitalk"]
+	path = minitalk
+	url = git@github.com:Univers42/minitalk.git
+[submodule "fdf"]
+	path = fdf
+	url = git@github.com:Univers42/fdf.git
+[submodule "ft_printf_42"]
+	path = ft_printf_42
+	url = git@github.com:Univers42/ft_printf_42.git
+[submodule "push-swap"]
+	path = push-swap
+	url = git@github.com:Univers42/push-swap.git
+[submodule "sh42"]
+	path = sh42
+	url = git@github.com:Univers42/sh42.git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:Univers42/scripts.git
+[submodule "libcpp"]
+	path = libcpp
+	url = git@github.com:Univers42/libcpp.git
+[submodule "pool_cpp"]
+	path = pool_cpp
+	url = git@github.com:Univers42/picine_cpp.git
+[submodule "minirt"]
+	path = minirt
+	url = git@github.com:Univers42/minirt.git
+[submodule "ft_malloc"]
+	path = ft_malloc
+	url = git@github.com:Univers42/ft_malloc.git
+[submodule "philosopher"]
+	path = philosopher
+	url = git@github.com:Univers42/philosopher.git
+[submodule "Inception"]
+	path = Inception
+	url = git@github.com:Univers42/Inception.git
