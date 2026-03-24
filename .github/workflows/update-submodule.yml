@@ -45,9 +45,20 @@ jobs:
           if grep -q 'git@github.com:' .gitmodules 2>/dev/null; then
             echo "🔀 Rewriting SSH URLs → HTTPS in .gitmodules..."
             sed -i 's|git@github.com:|https://github.com/|g' .gitmodules
-            git submodule sync
-            echo "✅ URLs rewritten."
           fi
+
+          # Init root-level submodules so URLs from .gitmodules get written
+          # to .git/config, THEN sync to propagate the rewritten HTTPS URLs
+          root_subs=$(git config --file .gitmodules \
+                          --get-regexp 'submodule\..*\.path' \
+                      | awk '{print $2}' | grep -v '/' || true)
+
+          for sub in $root_subs; do
+            git submodule init -- "$sub" 2>/dev/null || true
+          done
+
+          git submodule sync
+          echo "✅ All submodule URLs synced to HTTPS."
 
       # ── 3. Discover & add new public repos as submodules ───────────────
       - name: Discover and add new Univers42 public repos
@@ -55,7 +66,7 @@ jobs:
           set -euo pipefail
 
           echo "📡 Fetching public repos from Univers42..."
-          repos=$(gh repo list Univers42 --public --no-archived --limit 200 \
+          repos=$(gh repo list Univers42 --visibility=public --no-archived --limit 200 \
                   --json name --jq '.[].name' | sort)
 
           # Build a list of repo names already tracked as submodules
@@ -89,12 +100,19 @@ jobs:
             fi
 
             echo "  ➕ Adding submodule: ${repo}"
-            git submodule add --depth 1 \
-              "https://github.com/Univers42/${repo}.git" "${repo}" || {
-              echo "  ❌ Failed to add ${repo}, skipping"
+            if git submodule add --depth 1 \
+              "https://github.com/Univers42/${repo}.git" "${repo}" 2>&1; then
+              added=$((added + 1))
+            else
+              echo "  ❌ Failed to add ${repo} (empty/broken repo?), cleaning up"
+              # Remove leftover directory
+              rm -rf "${repo}"
+              # Remove from .gitmodules if it was partially added
+              git config --file .gitmodules --remove-section "submodule.${repo}" 2>/dev/null || true
+              # Remove from index
+              git rm --cached "${repo}" 2>/dev/null || true
               continue
-            }
-            added=$((added + 1))
+            fi
           done
 
           echo ""
