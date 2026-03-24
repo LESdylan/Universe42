@@ -105,6 +105,13 @@ jobs:
               continue
             fi
 
+            # Skip empty repos (no default branch = no commits at all)
+            default_branch=$(gh repo view "Univers42/${repo}" --json defaultBranchRef --jq '.defaultBranchRef.name' 2>/dev/null || true)
+            if [ -z "$default_branch" ]; then
+              echo "  ⏭️  ${repo} — empty repo (no commits), skipping"
+              continue
+            fi
+
             echo "  ➕ Adding submodule: ${repo}"
             if git submodule add --depth 1 \
               "https://github.com/Univers42/${repo}.git" "${repo}" 2>&1; then
