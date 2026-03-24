@@ -169,3 +169,6 @@
 [submodule "transcendence"]
 	path = transcendence
 	url = https://github.com/Univers42/transcendence.git
+[submodule "born2root"]
+	path = born2root
+	url = https://github.com/Univers42/born2root.git
