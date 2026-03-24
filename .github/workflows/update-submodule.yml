@@ -34,11 +34,20 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 2. Git identity ────────────────────────────────────────────────
-      - name: Configure Git identity
+      # ── 2. Git identity + rewrite SSH → HTTPS ────────────────────────
+      - name: Configure Git identity and fix SSH URLs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Rewrite all git@github.com: SSH URLs to HTTPS in .gitmodules
+          # so the runner can clone with the GITHUB_TOKEN instead of SSH keys
+          if grep -q 'git@github.com:' .gitmodules 2>/dev/null; then
+            echo "🔀 Rewriting SSH URLs → HTTPS in .gitmodules..."
+            sed -i 's|git@github.com:|https://github.com/|g' .gitmodules
+            git submodule sync
+            echo "✅ URLs rewritten."
+          fi
 
       # ── 3. Discover & add new public repos as submodules ───────────────
       - name: Discover and add new Univers42 public repos
@@ -122,7 +131,20 @@ jobs:
       # ── 5. Commit & push ───────────────────────────────────────────────
       - name: Commit and push changes
         run: |
-          git add -A
+          # Stage .gitmodules first (always safe)
+          git add .gitmodules 2>/dev/null || true
+
+          # Stage each root-level submodule individually, skip broken ones
+          root_subs=$(git config --file .gitmodules \
+                          --get-regexp 'submodule\..*\.path' \
+                      | awk '{print $2}' | grep -v '/' || true)
+
+          for sub in $root_subs; do
+            if [ -d "$sub" ] && ([ -f "$sub/.git" ] || [ -d "$sub/.git" ]); then
+              git add "$sub" 2>/dev/null || echo "⚠️  Skipped staging ${sub} (no commit checked out)"
+            fi
+          done
+
           if ! git diff --cached --quiet; then
             timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
             git commit -m "chore: sync Univers42 submodules [${timestamp}]"
