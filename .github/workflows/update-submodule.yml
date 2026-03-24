@@ -1,0 +1,134 @@
+# =============================================================================
+#  Sync Univers42 Public Repos — Weekly Automated Workflow
+# =============================================================================
+#  This workflow:
+#   1. Discovers ALL public (non-archived) repos from github.com/Univers42
+#   2. Adds any new repo as a root-level submodule (depth=1 shallow clone)
+#   3. Updates ONLY root-level submodules (no recursive update into nested
+#      submodules — their pinned commits are preserved to avoid breaking
+#      internal dependencies)
+#   4. Commits & pushes changes back to Universe42
+# =============================================================================
+
+name: Sync Univers42 Submodules
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # Every Monday at 03:00 UTC
+  workflow_dispatch: # Allow manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      # ── 1. Checkout ─────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Git identity ────────────────────────────────────────────────
+      - name: Configure Git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # ── 3. Discover & add new public repos as submodules ───────────────
+      - name: Discover and add new Univers42 public repos
+        run: |
+          set -euo pipefail
+
+          echo "📡 Fetching public repos from Univers42..."
+          repos=$(gh repo list Univers42 --public --no-archived --limit 200 \
+                  --json name --jq '.[].name' | sort)
+
+          # Build a list of repo names already tracked as submodules
+          existing_repos=""
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            url=$(echo "$line" | awk '{print $2}')
+            repo_name=$(basename "$url" .git)
+            existing_repos="${existing_repos} ${repo_name}"
+          done < <(git config --file .gitmodules \
+                       --get-regexp 'submodule\..*\.url' 2>/dev/null || true)
+
+          echo "📦 Already tracked repos:${existing_repos}"
+          echo ""
+
+          added=0
+          for repo in $repos; do
+            # Never add the showcase repo itself as its own submodule
+            [[ "$repo" == "Universe42" ]] && continue
+
+            # Skip repos already tracked (case-insensitive)
+            if echo "$existing_repos" | grep -qiw "$repo"; then
+              echo "  ✅ ${repo} — already tracked"
+              continue
+            fi
+
+            # Skip if a directory with that name already exists
+            if [ -d "$repo" ]; then
+              echo "  ⚠️  ${repo} — directory exists but is not a submodule, skipping"
+              continue
+            fi
+
+            echo "  ➕ Adding submodule: ${repo}"
+            git submodule add --depth 1 \
+              "https://github.com/Univers42/${repo}.git" "${repo}" || {
+              echo "  ❌ Failed to add ${repo}, skipping"
+              continue
+            }
+            added=$((added + 1))
+          done
+
+          echo ""
+          echo "🆕 New submodules added: ${added}"
+
+      # ── 4. Update root-level submodules only (depth=1, NO recursion) ───
+      - name: Update root-level submodules (no recursion)
+        run: |
+          set -euo pipefail
+
+          echo "🔄 Updating root-level submodules..."
+
+          # Select only submodule paths that live directly at the repo root
+          # (paths without '/' are depth-1 directories)
+          root_subs=$(git config --file .gitmodules \
+                          --get-regexp 'submodule\..*\.path' \
+                      | awk '{print $2}' | grep -v '/' || true)
+
+          if [ -z "$root_subs" ]; then
+            echo "ℹ️  No root-level submodules found."
+            exit 0
+          fi
+
+          for sub in $root_subs; do
+            echo "  ↻ ${sub}"
+            git submodule init   -- "$sub" 2>/dev/null || true
+            git submodule update --remote --depth 1 -- "$sub" || {
+              echo "  ⚠️  Failed to update ${sub}"
+            }
+          done
+
+          echo "✅ Root-level submodules updated."
+
+      # ── 5. Commit & push ───────────────────────────────────────────────
+      - name: Commit and push changes
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "chore: sync Univers42 submodules [${timestamp}]"
+            git push
+            echo "🚀 Changes committed and pushed."
+          else
+            echo "ℹ️  Everything is up to date — nothing to push."
+          fi
+
