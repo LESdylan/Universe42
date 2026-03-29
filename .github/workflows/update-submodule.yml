@@ -1,15 +1,3 @@
-# =============================================================================
-#  Sync Univers42 Public Repos — Weekly Automated Workflow
-# =============================================================================
-#  This workflow:
-#   1. Discovers ALL public (non-archived) repos from github.com/Univers42
-#   2. Adds any new repo as a root-level submodule (depth=1 shallow clone)
-#   3. Updates ONLY root-level submodules (no recursive update into nested
-#      submodules — their pinned commits are preserved to avoid breaking
-#      internal dependencies)
-#   4. Commits & pushes changes back to Universe42
-# =============================================================================
-
 name: Sync Univers42 Submodules
 
 on:
@@ -27,16 +15,16 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      # ── 1. Checkout ─────────────────────────────────────────────────────
+      # ── 1. Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
-          submodules: false          # we handle submodule init ourselves
+          submodules: false
 
-      # ── 2. Git identity + rewrite SSH → HTTPS ────────────────────────
+      # ── 2. Git identity + rewrite SSH → HTTPS
       - name: Configure Git identity and fix SSH URLs
         run: |
           git config user.name  "github-actions[bot]"
@@ -49,7 +37,7 @@ jobs:
           # Rewrite SSH URLs inside .gitmodules so the fix is persisted
           # in the committed file (not just for this runner session)
           if grep -q 'git@github.com:' .gitmodules 2>/dev/null; then
-            echo "🔀 Rewriting SSH URLs → HTTPS in .gitmodules..."
+            echo "Rewriting SSH URLs → HTTPS in .gitmodules..."
             sed -i 's|git@github.com:|https://github.com/|g' .gitmodules
           fi
 
@@ -64,14 +52,14 @@ jobs:
           done
 
           git submodule sync
-          echo "✅ All submodule URLs synced to HTTPS."
+          echo "All submodule URLs synced to HTTPS."
 
-      # ── 3. Discover & add new public repos as submodules ───────────────
+      # ── 3. Discover & add new public repos as submodules
       - name: Discover and add new Univers42 public repos
         run: |
           set -euo pipefail
 
-          echo "📡 Fetching public repos from Univers42..."
+          echo "Fetching public repos from Univers42..."
           repos=$(gh repo list Univers42 --visibility=public --no-archived --limit 200 \
                   --json name --jq '.[].name' | sort)
 
@@ -85,7 +73,7 @@ jobs:
           done < <(git config --file .gitmodules \
                        --get-regexp 'submodule\..*\.url' 2>/dev/null || true)
 
-          echo "📦 Already tracked repos:${existing_repos}"
+          echo "Already tracked repos:${existing_repos}"
           echo ""
 
           added=0
@@ -95,29 +83,29 @@ jobs:
 
             # Skip repos already tracked (case-insensitive)
             if echo "$existing_repos" | grep -qiw "$repo"; then
-              echo "  ✅ ${repo} — already tracked"
+              echo "${repo} — already tracked"
               continue
             fi
 
             # Skip if a directory with that name already exists
             if [ -d "$repo" ]; then
-              echo "  ⚠️  ${repo} — directory exists but is not a submodule, skipping"
+              echo "${repo} — directory exists but is not a submodule, skipping"
               continue
             fi
 
             # Skip empty repos (no default branch = no commits at all)
             default_branch=$(gh repo view "Univers42/${repo}" --json defaultBranchRef --jq '.defaultBranchRef.name' 2>/dev/null || true)
             if [ -z "$default_branch" ]; then
-              echo "  ⏭️  ${repo} — empty repo (no commits), skipping"
+              echo "${repo} — empty repo (no commits), skipping"
               continue
             fi
 
-            echo "  ➕ Adding submodule: ${repo}"
+            echo "Adding submodule: ${repo}"
             if git submodule add --depth 1 \
               "https://github.com/Univers42/${repo}.git" "${repo}" 2>&1; then
               added=$((added + 1))
             else
-              echo "  ❌ Failed to add ${repo} (empty/broken repo?), cleaning up"
+              echo "Failed to add ${repo} (empty/broken repo?), cleaning up"
               # Remove leftover directory
               rm -rf "${repo}"
               # Remove from .gitmodules if it was partially added
@@ -129,14 +117,14 @@ jobs:
           done
 
           echo ""
-          echo "🆕 New submodules added: ${added}"
+          echo "New submodules added: ${added}"
 
-      # ── 4. Update root-level submodules only (depth=1, NO recursion) ───
+      # ── 4. Update root-level submodules only (depth=1, NO recursion)
       - name: Update root-level submodules (no recursion)
         run: |
           set -euo pipefail
 
-          echo "🔄 Updating root-level submodules..."
+          echo "Updating root-level submodules..."
 
           # Select only submodule paths that live directly at the repo root
           # (paths without '/' are depth-1 directories)
@@ -145,7 +133,7 @@ jobs:
                       | awk '{print $2}' | grep -v '/' || true)
 
           if [ -z "$root_subs" ]; then
-            echo "ℹ️  No root-level submodules found."
+            echo "No root-level submodules found."
             exit 0
           fi
 
@@ -153,13 +141,13 @@ jobs:
             echo "  ↻ ${sub}"
             git submodule init   -- "$sub" 2>/dev/null || true
             git submodule update --remote --depth 1 -- "$sub" || {
-              echo "  ⚠️  Failed to update ${sub}"
+              echo "Failed to update ${sub}"
             }
           done
 
-          echo "✅ Root-level submodules updated."
+          echo "Root-level submodules updated."
 
-      # ── 5. Commit & push ───────────────────────────────────────────────
+      # ── 5. Commit & push
       - name: Commit and push changes
         run: |
           # Stage .gitmodules first (always safe)
@@ -172,7 +160,7 @@ jobs:
 
           for sub in $root_subs; do
             if [ -d "$sub" ] && ([ -f "$sub/.git" ] || [ -d "$sub/.git" ]); then
-              git add "$sub" 2>/dev/null || echo "⚠️  Skipped staging ${sub} (no commit checked out)"
+              git add "$sub" 2>/dev/null || echo "Skipped staging ${sub} (no commit checked out)"
             fi
           done
 
@@ -180,8 +168,8 @@ jobs:
             timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
             git commit -m "chore: sync Univers42 submodules [${timestamp}]"
             git push
-            echo "🚀 Changes committed and pushed."
+            echo "Changes committed and pushed."
           else
-            echo "ℹ️  Everything is up to date — nothing to push."
+            echo "Everything is up to date — nothing to push."
           fi
 
