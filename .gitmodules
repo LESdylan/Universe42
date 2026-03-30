@@ -172,3 +172,54 @@
 [submodule "born2root"]
 	path = born2root
 	url = https://github.com/Univers42/born2root.git
+[submodule "Canagrou"]
+	path = Canagrou
+	url = https://github.com/Univers42/Canagrou.git
+[submodule "b_compiler"]
+	path = b_compiler
+	url = https://github.com/Univers42/b_compiler.git
+[submodule "cc1"]
+	path = cc1
+	url = https://github.com/Univers42/cc1.git
+[submodule "formula-engine"]
+	path = formula-engine
+	url = https://github.com/Univers42/formula-engine.git
+[submodule "ft_lex"]
+	path = ft_lex
+	url = https://github.com/Univers42/ft_lex.git
+[submodule "ft_ls"]
+	path = ft_ls
+	url = https://github.com/Univers42/ft_ls.git
+[submodule "ft_yacc"]
+	path = ft_yacc
+	url = https://github.com/Univers42/ft_yacc.git
+[submodule "inception-of-things"]
+	path = inception-of-things
+	url = https://github.com/Univers42/inception-of-things.git
+[submodule "markengine"]
+	path = markengine
+	url = https://github.com/Univers42/markengine.git
+[submodule "minilibx-linux"]
+	path = minilibx-linux
+	url = https://github.com/Univers42/minilibx-linux.git
+[submodule "music-room"]
+	path = music-room
+	url = https://github.com/Univers42/music-room.git
+[submodule "netflix"]
+	path = netflix
+	url = https://github.com/Univers42/netflix.git
+[submodule "nm"]
+	path = nm
+	url = https://github.com/Univers42/nm.git
+[submodule "notion-database-sys"]
+	path = notion-database-sys
+	url = https://github.com/Univers42/notion-database-sys.git
+[submodule "prismatica-landing"]
+	path = prismatica-landing
+	url = https://github.com/Univers42/prismatica-landing.git
+[submodule "red-tetris"]
+	path = red-tetris
+	url = https://github.com/Univers42/red-tetris.git
+[submodule "web_shell"]
+	path = web_shell
+	url = https://github.com/Univers42/web_shell.git
