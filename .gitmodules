@@ -223,3 +223,6 @@
 [submodule "web_shell"]
 	path = web_shell
 	url = https://github.com/Univers42/web_shell.git
+[submodule "monkey-bot"]
+	path = monkey-bot
+	url = https://github.com/Univers42/monkey-bot.git
