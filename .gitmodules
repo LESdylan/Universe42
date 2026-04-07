@@ -226,3 +226,6 @@
 [submodule "monkey-bot"]
 	path = monkey-bot
 	url = https://github.com/Univers42/monkey-bot.git
+[submodule "feedback"]
+	path = feedback
+	url = https://github.com/Univers42/feedback.git
