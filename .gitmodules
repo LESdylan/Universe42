@@ -229,3 +229,6 @@
 [submodule "feedback"]
 	path = feedback
 	url = https://github.com/Univers42/feedback.git
+[submodule "realtime-agnostic"]
+	path = realtime-agnostic
+	url = https://github.com/Univers42/realtime-agnostic.git
