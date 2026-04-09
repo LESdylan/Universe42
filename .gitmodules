@@ -232,3 +232,9 @@
 [submodule "realtime-agnostic"]
 	path = realtime-agnostic
 	url = https://github.com/Univers42/realtime-agnostic.git
+[submodule "UI-Collection"]
+	path = UI-Collection
+	url = https://github.com/Univers42/UI-Collection.git
+[submodule "osionos"]
+	path = osionos
+	url = https://github.com/Univers42/osionos.git
