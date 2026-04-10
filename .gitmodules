@@ -238,3 +238,9 @@
 [submodule "osionos"]
 	path = osionos
 	url = https://github.com/Univers42/osionos.git
+[submodule "DoD"]
+	path = DoD
+	url = https://github.com/Univers42/DoD.git
+[submodule "savanna-zoo"]
+	path = savanna-zoo
+	url = https://github.com/Univers42/savanna-zoo.git
