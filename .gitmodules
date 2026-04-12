@@ -244,3 +244,6 @@
 [submodule "savanna-zoo"]
 	path = savanna-zoo
 	url = https://github.com/Univers42/savanna-zoo.git
+[submodule "adapter-registry-api"]
+	path = adapter-registry-api
+	url = https://github.com/Univers42/adapter-registry-api.git
