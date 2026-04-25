@@ -247,3 +247,6 @@
 [submodule "adapter-registry-api"]
 	path = adapter-registry-api
 	url = https://github.com/Univers42/adapter-registry-api.git
+[submodule "symfony-back"]
+	path = symfony-back
+	url = https://github.com/Univers42/symfony-back.git
