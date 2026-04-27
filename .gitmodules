@@ -250,3 +250,9 @@
 [submodule "symfony-back"]
 	path = symfony-back
 	url = https://github.com/Univers42/symfony-back.git
+[submodule "learn_vim"]
+	path = learn_vim
+	url = https://github.com/Univers42/learn_vim.git
+[submodule "mini-baas-sdk"]
+	path = mini-baas-sdk
+	url = https://github.com/Univers42/mini-baas-sdk.git
