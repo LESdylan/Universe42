@@ -256,3 +256,6 @@
 [submodule "mini-baas-sdk"]
 	path = mini-baas-sdk
 	url = https://github.com/Univers42/mini-baas-sdk.git
+[submodule "pilot-project"]
+	path = pilot-project
+	url = https://github.com/Univers42/pilot-project.git
