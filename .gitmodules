@@ -259,3 +259,6 @@
 [submodule "pilot-project"]
 	path = pilot-project
 	url = https://github.com/Univers42/pilot-project.git
+[submodule "track-binocle"]
+	path = track-binocle
+	url = https://github.com/Univers42/track-binocle.git
