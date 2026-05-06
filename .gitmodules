@@ -262,3 +262,9 @@
 [submodule "track-binocle"]
 	path = track-binocle
 	url = https://github.com/Univers42/track-binocle.git
+[submodule "ft_irc"]
+	path = ft_irc
+	url = https://github.com/Univers42/ft_irc.git
+[submodule "libasm"]
+	path = libasm
+	url = https://github.com/Univers42/libasm.git
