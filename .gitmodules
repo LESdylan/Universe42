@@ -268,3 +268,6 @@
 [submodule "libasm"]
 	path = libasm
 	url = https://github.com/Univers42/libasm.git
+[submodule "42sh"]
+	path = 42sh
+	url = https://github.com/Univers42/42sh.git
