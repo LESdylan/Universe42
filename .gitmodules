@@ -271,3 +271,9 @@
 [submodule "42sh"]
 	path = 42sh
 	url = https://github.com/Univers42/42sh.git
+[submodule "osionos-calendar"]
+	path = osionos-calendar
+	url = https://github.com/Univers42/osionos-calendar.git
+[submodule "osionos-mail"]
+	path = osionos-mail
+	url = https://github.com/Univers42/osionos-mail.git
