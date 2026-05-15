@@ -277,3 +277,6 @@
 [submodule "osionos-mail"]
 	path = osionos-mail
 	url = https://github.com/Univers42/osionos-mail.git
+[submodule "ft_transcendence"]
+	path = ft_transcendence
+	url = https://github.com/Univers42/ft_transcendence.git
