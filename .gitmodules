@@ -280,3 +280,6 @@
 [submodule "ft_transcendence"]
 	path = ft_transcendence
 	url = https://github.com/Univers42/ft_transcendence.git
+[submodule "hellish"]
+	path = hellish
+	url = https://github.com/Univers42/hellish.git
