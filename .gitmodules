@@ -283,3 +283,9 @@
 [submodule "hellish"]
 	path = hellish
 	url = https://github.com/Univers42/hellish.git
+[submodule "grobase"]
+	path = grobase
+	url = https://github.com/Univers42/grobase.git
+[submodule "grove"]
+	path = grove
+	url = https://github.com/Univers42/grove.git
