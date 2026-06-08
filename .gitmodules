@@ -289,3 +289,9 @@
 [submodule "grove"]
 	path = grove
 	url = https://github.com/Univers42/grove.git
+[submodule "groot"]
+	path = groot
+	url = https://github.com/Univers42/groot.git
+[submodule "minilibx_from42"]
+	path = minilibx_from42
+	url = https://github.com/Univers42/minilibx_from42.git
