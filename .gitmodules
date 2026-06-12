@@ -295,3 +295,6 @@
 [submodule "minilibx_from42"]
 	path = minilibx_from42
 	url = https://github.com/Univers42/minilibx_from42.git
+[submodule "dental-clinic-website"]
+	path = dental-clinic-website
+	url = https://github.com/Univers42/dental-clinic-website.git
