@@ -298,3 +298,6 @@
 [submodule "dental-clinic-website"]
 	path = dental-clinic-website
 	url = https://github.com/Univers42/dental-clinic-website.git
+[submodule "pool_rust"]
+	path = pool_rust
+	url = https://github.com/Univers42/pool_rust.git
