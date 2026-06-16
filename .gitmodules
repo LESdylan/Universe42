@@ -301,3 +301,6 @@
 [submodule "pool_rust"]
 	path = pool_rust
 	url = https://github.com/Univers42/pool_rust.git
+[submodule "design_webpage_explorer"]
+	path = design_webpage_explorer
+	url = https://github.com/Univers42/design_webpage_explorer.git
