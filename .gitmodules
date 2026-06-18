@@ -304,3 +304,12 @@
 [submodule "design_webpage_explorer"]
 	path = design_webpage_explorer
 	url = https://github.com/Univers42/design_webpage_explorer.git
+[submodule "claude-deal-with-the-devil"]
+	path = claude-deal-with-the-devil
+	url = https://github.com/Univers42/claude-deal-with-the-devil.git
+[submodule "grobase-website"]
+	path = grobase-website
+	url = https://github.com/Univers42/grobase-website.git
+[submodule "java-dam-baas"]
+	path = java-dam-baas
+	url = https://github.com/Univers42/java-dam-baas.git
