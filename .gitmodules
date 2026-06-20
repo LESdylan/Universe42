@@ -313,3 +313,12 @@
 [submodule "java-dam-baas"]
 	path = java-dam-baas
 	url = https://github.com/Univers42/java-dam-baas.git
+[submodule "42ctl"]
+	path = 42ctl
+	url = https://github.com/Univers42/42ctl.git
+[submodule "homebrew-tap"]
+	path = homebrew-tap
+	url = https://github.com/Univers42/homebrew-tap.git
+[submodule "vault42"]
+	path = vault42
+	url = https://github.com/Univers42/vault42.git
