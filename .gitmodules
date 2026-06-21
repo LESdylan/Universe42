@@ -322,3 +322,6 @@
 [submodule "vault42"]
 	path = vault42
 	url = https://github.com/Univers42/vault42.git
+[submodule "design-explorer"]
+	path = design-explorer
+	url = https://github.com/Univers42/design-explorer.git
