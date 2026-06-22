@@ -325,3 +325,6 @@
 [submodule "design-explorer"]
 	path = design-explorer
 	url = https://github.com/Univers42/design-explorer.git
+[submodule "interview"]
+	path = interview
+	url = https://github.com/Univers42/interview.git
