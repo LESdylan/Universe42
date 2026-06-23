@@ -328,3 +328,6 @@
 [submodule "interview"]
 	path = interview
 	url = https://github.com/Univers42/interview.git
+[submodule "claude-code-best-practice"]
+	path = claude-code-best-practice
+	url = https://github.com/Univers42/claude-code-best-practice.git
