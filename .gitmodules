@@ -331,3 +331,21 @@
 [submodule "claude-code-best-practice"]
 	path = claude-code-best-practice
 	url = https://github.com/Univers42/claude-code-best-practice.git
+[submodule "dr-quine"]
+	path = dr-quine
+	url = https://github.com/Univers42/dr-quine.git
+[submodule "ft_linear_regression"]
+	path = ft_linear_regression
+	url = https://github.com/Univers42/ft_linear_regression.git
+[submodule "ft_malcolm"]
+	path = ft_malcolm
+	url = https://github.com/Univers42/ft_malcolm.git
+[submodule "ft_nmap"]
+	path = ft_nmap
+	url = https://github.com/Univers42/ft_nmap.git
+[submodule "ft_ping"]
+	path = ft_ping
+	url = https://github.com/Univers42/ft_ping.git
+[submodule "ft_traceroute"]
+	path = ft_traceroute
+	url = https://github.com/Univers42/ft_traceroute.git
