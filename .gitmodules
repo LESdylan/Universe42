@@ -349,3 +349,9 @@
 [submodule "ft_traceroute"]
 	path = ft_traceroute
 	url = https://github.com/Univers42/ft_traceroute.git
+[submodule "ft_script"]
+	path = ft_script
+	url = https://github.com/Univers42/ft_script.git
+[submodule "ft_select"]
+	path = ft_select
+	url = https://github.com/Univers42/ft_select.git
