@@ -355,3 +355,9 @@
 [submodule "ft_select"]
 	path = ft_select
 	url = https://github.com/Univers42/ft_select.git
+[submodule "audit_network"]
+	path = audit_network
+	url = https://github.com/Univers42/audit_network.git
+[submodule "ft_hangout"]
+	path = ft_hangout
+	url = https://github.com/Univers42/ft_hangout.git
