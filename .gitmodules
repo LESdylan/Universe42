@@ -361,3 +361,6 @@
 [submodule "ft_hangout"]
 	path = ft_hangout
 	url = https://github.com/Univers42/ft_hangout.git
+[submodule "network_practice"]
+	path = network_practice
+	url = https://github.com/Univers42/network_practice.git
