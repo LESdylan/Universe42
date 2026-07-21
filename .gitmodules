@@ -364,3 +364,6 @@
 [submodule "network_practice"]
 	path = network_practice
 	url = https://github.com/Univers42/network_practice.git
+[submodule "darkly"]
+	path = darkly
+	url = https://github.com/Univers42/darkly.git
