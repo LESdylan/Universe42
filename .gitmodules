@@ -367,3 +367,12 @@
 [submodule "darkly"]
 	path = darkly
 	url = https://github.com/Univers42/darkly.git
+[submodule "fdf_temp"]
+	path = fdf_temp
+	url = https://github.com/Univers42/fdf_temp.git
+[submodule "libpy"]
+	path = libpy
+	url = https://github.com/Univers42/libpy.git
+[submodule "visualizer_ps"]
+	path = visualizer_ps
+	url = https://github.com/Univers42/visualizer_ps.git
