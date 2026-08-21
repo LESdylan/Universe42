@@ -376,3 +376,6 @@
 [submodule "visualizer_ps"]
 	path = visualizer_ps
 	url = https://github.com/Univers42/visualizer_ps.git
+[submodule "codexion_ultra_purada"]
+	path = codexion_ultra_purada
+	url = https://github.com/Univers42/codexion_ultra_purada.git
