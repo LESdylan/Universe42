@@ -379,3 +379,9 @@
 [submodule "codexion_ultra_purada"]
 	path = codexion_ultra_purada
 	url = https://github.com/Univers42/codexion_ultra_purada.git
+[submodule "Torturette"]
+	path = Torturette
+	url = https://github.com/Univers42/Torturette.git
+[submodule "francinette-installer"]
+	path = francinette-installer
+	url = https://github.com/Univers42/francinette-installer.git
