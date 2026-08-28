@@ -385,3 +385,6 @@
 [submodule "francinette-installer"]
 	path = francinette-installer
 	url = https://github.com/Univers42/francinette-installer.git
+[submodule "hellishrc_plugins"]
+	path = hellishrc_plugins
+	url = https://github.com/Univers42/hellishrc_plugins.git
