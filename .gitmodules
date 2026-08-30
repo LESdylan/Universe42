@@ -388,3 +388,6 @@
 [submodule "hellishrc_plugins"]
 	path = hellishrc_plugins
 	url = https://github.com/Univers42/hellishrc_plugins.git
+[submodule "Univers42"]
+	path = Univers42
+	url = https://github.com/Univers42/Univers42.git
