@@ -391,3 +391,6 @@
 [submodule "Univers42"]
 	path = Univers42
 	url = https://github.com/Univers42/Univers42.git
+[submodule "lear_programming"]
+	path = lear_programming
+	url = https://github.com/Univers42/lear_programming.git
