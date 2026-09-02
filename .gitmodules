@@ -394,3 +394,9 @@
 [submodule "lear_programming"]
 	path = lear_programming
 	url = https://github.com/Univers42/lear_programming.git
+[submodule "42_examshell"]
+	path = 42_examshell
+	url = https://github.com/Univers42/42_examshell.git
+[submodule "codewar"]
+	path = codewar
+	url = https://github.com/Univers42/codewar.git
