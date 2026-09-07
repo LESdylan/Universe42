@@ -400,3 +400,6 @@
 [submodule "codewar"]
 	path = codewar
 	url = https://github.com/Univers42/codewar.git
+[submodule "turings"]
+	path = turings
+	url = https://github.com/Univers42/turings.git
