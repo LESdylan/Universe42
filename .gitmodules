@@ -403,3 +403,6 @@
 [submodule "turings"]
 	path = turings
 	url = https://github.com/Univers42/turings.git
+[submodule "Code_Practice"]
+	path = Code_Practice
+	url = https://github.com/Univers42/Code_Practice.git
