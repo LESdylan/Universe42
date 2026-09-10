@@ -409,3 +409,6 @@
 [submodule "corewar"]
 	path = corewar
 	url = https://github.com/Univers42/corewar.git
+[submodule "wr"]
+	path = wr
+	url = https://github.com/Univers42/wr.git
